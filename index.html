@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Documentation - Day 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Day 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
+          <li class="nav-item"><a class="nav-link" href=".day4.html">Day 4</a></li>
+          <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
+          <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
+          <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
+          <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container content">
+      <h2>History of JavaScript</h2>
+      <p>
+        JavaScript, often abbreviated as JS, is a programming language that was
+        created to make web pages interactive. It was developed by Brendan Eich
+        while working at Netscape Communications Corporation and first appeared
+        in December 1995. The language has since evolved significantly and is
+        now one of the core technologies of the World Wide Web, alongside HTML
+        and CSS.
+      </p>
+
+      <h3>Early Beginnings</h3>
+      <div class="highlight">
+        <p>
+          <strong>Netscape and Mocha:</strong> JavaScript was initially called
+          Mocha, later renamed to LiveScript, and finally JavaScript to
+          capitalize on the popularity of Java at the time. Netscape Navigator
+          2.0 included the first version of the language.
+        </p>
+        <p>
+          <strong>ECMAScript:</strong> In 1996, Netscape submitted JavaScript to
+          ECMA International for standardization, resulting in the ECMAScript
+          specification, officially known as ECMA-262. The first edition was
+          published in 1997.
+        </p>
+      </div>
+
+      <h3>Evolution and Standardization</h3>
+      <div class="highlight">
+        <p>
+          <strong>Versions of ECMAScript:</strong> Over the years, ECMAScript
+          has undergone numerous revisions. Some of the most significant updates
+          include:
+        </p>
+        <ul>
+          <li>
+            <strong>ECMAScript 3 (1999):</strong> Introduced regular
+            expressions, better string handling, and exception handling.
+          </li>
+          <li>
+            <strong>ECMAScript 5 (2009):</strong> Added features like strict
+            mode, JSON support, and array methods.
+          </li>
+          <li>
+            <strong>ECMAScript 6 (2015):</strong> Also known as ES6 or ES2015,
+            this version introduced major changes such as arrow functions,
+            classes, template literals, <code>let</code> and
+            <code>const</code> keywords, and modules.
+          </li>
+          <li>
+            <strong>Subsequent Versions:</strong> Annual updates have continued
+            to add new features and improvements.
+          </li>
+        </ul>
+      </div>
+
+      <h3>Modern JavaScript</h3>
+      <div class="highlight">
+        <p>
+          <strong>Node.js:</strong> In 2009, Ryan Dahl introduced Node.js,
+          allowing JavaScript to be used for server-side scripting. This
+          expanded the language's capabilities beyond the browser.
+        </p>
+        <p>
+          <strong>Frameworks and Libraries:</strong> JavaScript has a rich
+          ecosystem of frameworks and libraries like React, Angular, and Vue.js,
+          which help developers build complex web applications efficiently.
+        </p>
+        <p>
+          <strong>Community and Usage:</strong> JavaScript is one of the most
+          popular programming languages in the world, used by millions of
+          developers and supported by a vast community.
+        </p>
+      </div>
+
+      <h2>Let, Var, and Const in JavaScript</h2>
+      <p>
+        JavaScript provides three ways to declare variables: <code>var</code>,
+        <code>let</code>, and <code>const</code>. Understanding the differences
+        between them is crucial for writing effective and bug-free code.
+      </p>
+
+      <h3>var</h3>
+      <div class="highlight">
+        <p>
+          <strong>Function Scope:</strong> Variables declared with
+          <code>var</code> are function-scoped, meaning they are accessible
+          within the function they are declared in, or globally if declared
+          outside any function.
+        </p>
+        <p>
+          <strong>Hoisting:</strong> <code>var</code> declarations are hoisted
+          to the top of their scope, meaning the declaration is processed before
+          any code is executed. However, initialization is not hoisted.
+        </p>
+        <p>
+          <strong>Re-declaration:</strong> You can re-declare variables using
+          <code>var</code> within the same scope without errors.
+        </p>
+        <pre><code>function exampleVar() {
+  console.log(a); // undefined due to hoisting
+  var a = 10;
+  console.log(a); // 10
+}
+exampleVar();
+console.log(a); // ReferenceError: a is not defined</code></pre>
+      </div>
+
+      <h3>let</h3>
+      <div class="highlight">
+        <p>
+          <strong>Block Scope:</strong> Variables declared with
+          <code>let</code> are block-scoped, meaning they are only accessible
+          within the block, statement, or expression they are declared in.
+        </p>
+        <p>
+          <strong>Hoisting:</strong> <code>let</code> declarations are also
+          hoisted, but unlike <code>var</code>, they are not initialized until
+          the declaration is encountered. This leads to a "temporal dead zone"
+          where the variable cannot be accessed.
+        </p>
+        <p>
+          <strong>No Re-declaration:</strong> Re-declaring a
+          <code>let</code> variable in the same scope results in a syntax error.
+        </p>
+        <pre><code>function exampleLet() {
+  console.log(b); // ReferenceError: b is not defined
+  let b = 20;
+  console.log(b); // 20
+  {
+    let b = 30;
+    console.log(b); // 30 (block-scoped)
+  }
+  console.log(b); // 20
+}
+exampleLet();</code></pre>
+      </div>
+
+      <h3>const</h3>
+      <div class="highlight">
+        <p>
+          <strong>Block Scope:</strong> Like <code>let</code>,
+          <code>const</code> is block-scoped.
+        </p>
+        <p>
+          <strong>Hoisting:</strong> <code>const</code> declarations are hoisted
+          but are not initialized, similar to <code>let</code>. Accessing the
+          variable before its declaration results in a ReferenceError.
+        </p>
+        <p>
+          <strong>Immutability:</strong> <code>const</code> variables cannot be
+          reassigned after their initial assignment. However, this does not mean
+          the value is immutable. For objects and arrays, the contents can still
+          be modified.
+        </p>
+        <pre><code>function exampleConst() {
+  const c = 30;
+  console.log(c); // 30
+  // c = 40; // TypeError: Assignment to constant variable.
+
+  const arr = [1, 2, 3];
+  arr.push(4); // Allowed
+  console.log(arr); // [1, 2, 3, 4]
+
+  const obj = { key: 'value' };
+  obj.key = 'newValue'; // Allowed
+  console.log(obj); // { key: 'newValue' }
+}
+exampleConst();</code></pre>
+      </div>
+
+      <h3>Best Practices</h3>
+      <div class="highlight">
+        <ul>
+          <li>
+            <strong
+              >Use <code>let</code> for variables that will be
+              reassigned.</strong
+            >
+          </li>
+          <li>
+            <strong
+              >Use <code>const</code> for variables that should not be
+              reassigned.</strong
+            >
+          </li>
+          <li>
+            <strong
+              >Avoid using <code>var</code> to prevent issues related to
+              hoisting and scope.</strong
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2024 Juwon Code | Valuemax Javascript  All rights reserved.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

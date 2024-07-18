@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Time Locator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #f0f0f5, #d6d6e0);
+            color: #333;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            padding: 20px 40px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideIn 1.5s forwards ease-in-out;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            margin: 0 auto 20px auto; 
+            position: absolute;
+            top: 10px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .navbar-nav {
+            margin: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.5rem;
+                padding: 15px 20px;
+            }
+
+            .navbar {
+                width: 95%;
+            }
+
+            .navbar-brand {
+                font-size: 1.2em;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Juwon Code</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
+                <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
+                <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
+                <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
+                <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
+                <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 id="greetings"></h1>
+
+    <footer>
+        &copy; 2024 Juwon Design. All rights reserved.
+    </footer>
+   
+    <script>
+        let currentTime = new Date().getHours();
+        
+        switch (true) {
+            case (currentTime < 11):
+                document.getElementById('greetings').innerHTML = "GOOD MORNING";
+                break;
+            case (currentTime < 16):
+                document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
+                break;
+            case (currentTime < 20):
+                document.getElementById('greetings').innerHTML = "GOOD EVENING";
+                break;
+            default:
+                document.getElementById('greetings').innerHTML = "GOOD NIGHT";
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

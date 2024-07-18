@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Documentation - Day 2</title>
+    <link rel="stylesheet" href="day2.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <style>
+
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day2.html">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day3.html">Day 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day4.html">Day 4</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
+          <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
+          <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
+          <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container content">
+      <h2>Objects & Arrays in JavaScript</h2>
+      <p>
+        <strong>Objects</strong> are collections of related data and functions,
+        stored as key-value pairs. Keys are also called properties or
+        attributes, and values can be any data type, including other objects.
+      </p>
+
+      <h3>Creating an Object</h3>
+      <div class="highlight">
+        <p>We can create an object using object literal syntax.</p>
+        <pre><code>// Using object literal syntax
+const personTaiwo = {
+  firstName: "Taiwo",
+  lastName: "Ojo",
+  age: 25,
+  greet: function() {
+    console.log("Hello, my name is " + this.firstName + " " + this.lastName);
+  }
+};
+
+const personEmmanuel = {
+  firstName: "Emmanuel",
+  lastName: "Ibrahim",
+  age: 30,
+  greet: function() {
+    console.log("Hello, my name is " + this.firstName + " " + this.lastName);
+  }
+};</code></pre>
+      </div>
+
+      <h3>Accessing Object Properties</h3>
+      <div class="highlight">
+        <p>
+          You can access object properties using dot notation or bracket
+          notation.
+        </p>
+        <pre><code>// Dot notation
+console.log(personTaiwo.firstName); // Taiwo
+personTaiwo.greet(); // Hello, my name is Taiwo Ojo
+
+// Bracket notation
+console.log(personEmmanuel['lastName']); // Ibrahim
+personEmmanuel['greet'](); // Hello, my name is Emmanuel Ibrahim</code></pre>
+      </div>
+
+      <h3>Modifying Object Properties</h3>
+      <div class="highlight">
+        <p>We can add, update, or delete properties of an object.</p>
+        <pre><code>// Add a new property
+personTaiwo.hobby = "Reading";
+console.log(personTaiwo.hobby); // Reading
+
+// Update an existing property
+personEmmanuel.age = 31;
+console.log(personEmmanuel.age); // 31
+
+// Delete a property
+delete personTaiwo.age;
+console.log(personTaiwo.age); // undefined</code></pre>
+      </div>
+
+      <h3>Iterating over Object Properties</h3>
+      <div class="highlight">
+        <p>
+          We can iterate over the properties of an object using a
+          <code>for...in</code> loop.
+        </p>
+        <pre><code>for (let key in personTaiwo) {
+  console.log(key + ": " + personTaiwo[key]);
+}</code></pre>
+      </div>
+
+      <h2>Arrays in JavaScript</h2>
+      <p>
+        <strong>Arrays</strong> are ordered collections of values, where each
+        value is called an element and has an index.
+      </p>
+
+      <h3>Creating an Array</h3>
+      <div class="highlight">
+        <p>We can create arrays using array literal syntax.</p>
+        <pre><code>const names = ["Taiwo", "Emmanuel", "Kemi"];
+const ages = [25, 30, 27];</code></pre>
+      </div>
+
+      <h3>Accessing Array Elements</h3>
+      <div class="highlight">
+        <p>We can access array elements using their index.</p>
+        <pre><code>console.log(names[0]); // Taiwo
+console.log(ages[1]); // 30</code></pre>
+      </div>
+
+      <h3>Modifying Array Elements</h3>
+      <div class="highlight">
+        <p>We can add, update, or remove elements from an array.</p>
+        <pre><code>// Add elements
+names.push("Tunde");
+console.log(names); // ["Taiwo", "Emmanuel", "Kemi", "Tunde"]
+
+// Update elements
+ages[0] = 26;
+console.log(ages); // [26, 30, 27]
+
+// Remove elements
+names.pop();
+console.log(names); // ["Taiwo", "Emmanuel", "Kemi"]</code></pre>
+      </div>
+
+      <h3>Iterating over Array Elements</h3>
+      <div class="highlight">
+        <p>
+          We can iterate over array elements using a <code>for</code> loop or
+          <code>for...of</code> loop.
+        </p>
+        <pre><code>for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+
+for (let name of names) {
+  console.log(name);
+}</code></pre>
+      </div>
+
+      <h3>Common Array Methods</h3>
+      <div class="highlight">
+        <ul>
+          <li>
+            <code>push()</code>: Adds one or more elements to the end of an
+            array.
+          </li>
+          <li><code>pop()</code>: Removes the last element from an array.</li>
+          <li>
+            <code>shift()</code>: Removes the first element from an array.
+          </li>
+          <li>
+            <code>unshift()</code>: Adds one or more elements to the beginning
+            of an array.
+          </li>
+          <li>
+            <code>slice()</code>: Returns a shallow copy of a portion of an
+            array.
+          </li>
+          <li>
+            <code>splice()</code>: Adds or removes elements from an array.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>
+        Understanding objects and arrays is fundamental to mastering JavaScript.
+        They are used to store and manipulate data, making our code more dynamic
+        and powerful.
+      </p>
+    </div>
+
+    <div class="footer">
+      &copy; 2024 Juwon Code | Valuemax Javascript All rights reserved.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

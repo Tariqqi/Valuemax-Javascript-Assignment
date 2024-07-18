@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drink Recommendation</title>
+    <link rel="stylesheet" href="day3.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
+          <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
+          <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
+          <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
+          <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
+          <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h1 class="text-center">Drink Recommendation</h1>
+      <div class="text-center mt-4">
+        <button onclick="runCode()" class="btn btn-secondary">Run Code</button>
+      </div>
+      <div id="output" class="output-block text-center"></div>
+      <div class="code-block mt-4">
+        <pre><code class="pre-co">
+function runCode() {
+    let age = prompt('How old are you?');
+    let gender = prompt('Male or female?');
+    let message = '';
+
+    if (age < 18) {
+        message = 'You can take only water';
+    } else if (age > 18 && age < 25 && gender.toLowerCase() === 'female') {
+        message = 'You can take coke';
+    } else if (age > 25 && gender.toLowerCase() === 'female') {
+        message = 'You may take beer';
+    } else if (age > 18 && gender.toLowerCase() === 'male') {
+        message = 'You may take beer';
+    } else {
+        message = 'No drink for you';
+    }
+
+    document.getElementById('output').innerHTML = `<p>${message}</p>`;
+}
+            </code></pre>
+      </div>
+    </div>
+
+    <div class="footer">
+      &copy; 2024 Juwon Code | Valuemax Javascript All rights reserved.
+    </div>
+
+    <script>
+      function runCode() {
+        let age = prompt("How old are you?");
+        let gender = prompt("Male or female?");
+
+        if (age < 18) {
+          message = "You can take only water";
+        } else if (age > 18 && age < 25 && gender === "female") {
+          message = "You can take coke";
+        } else if (age > 25 && gender === "female") {
+          message = "You may take beer";
+        } else if (age > 18 && gender === "male") {
+          message = "You may take beer";
+        } else {
+          message = "No drink for you";
+        }
+
+        document.getElementById("output").innerHTML = `<p>${message}</p>`;
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
