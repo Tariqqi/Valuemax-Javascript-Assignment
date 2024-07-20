@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Documentation - Day 1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -27,7 +27,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Day 1</a></li>
           <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
           <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
-          <li class="nav-item"><a class="nav-link" href=".day4.html">Day 4</a></li>
+          <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
           <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
           <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
           <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
@@ -39,202 +39,274 @@
     <div class="container content">
       <h2>History of JavaScript</h2>
       <p>
-        JavaScript, often abbreviated as JS, is a programming language that was
-        created to make web pages interactive. It was developed by Brendan Eich
-        while working at Netscape Communications Corporation and first appeared
-        in December 1995. The language has since evolved significantly and is
-        now one of the core technologies of the World Wide Web, alongside HTML
-        and CSS.
+        JavaScript, often abbreviated as JS, is a programming language created to make web pages interactive. Developed by Brendan Eich while at Netscape Communications Corporation, it first appeared in December 1995. JavaScript has since evolved and is now one of the core technologies of the World Wide Web, alongside HTML and CSS.
       </p>
 
-      <h3>Early Beginnings</h3>
-      <div class="highlight">
-        <p>
-          <strong>Netscape and Mocha:</strong> JavaScript was initially called
-          Mocha, later renamed to LiveScript, and finally JavaScript to
-          capitalize on the popularity of Java at the time. Netscape Navigator
-          2.0 included the first version of the language.
-        </p>
-        <p>
-          <strong>ECMAScript:</strong> In 1996, Netscape submitted JavaScript to
-          ECMA International for standardization, resulting in the ECMAScript
-          specification, officially known as ECMA-262. The first edition was
-          published in 1997.
-        </p>
-      </div>
-
-      <h3>Evolution and Standardization</h3>
-      <div class="highlight">
-        <p>
-          <strong>Versions of ECMAScript:</strong> Over the years, ECMAScript
-          has undergone numerous revisions. Some of the most significant updates
-          include:
-        </p>
-        <ul>
-          <li>
-            <strong>ECMAScript 3 (1999):</strong> Introduced regular
-            expressions, better string handling, and exception handling.
-          </li>
-          <li>
-            <strong>ECMAScript 5 (2009):</strong> Added features like strict
-            mode, JSON support, and array methods.
-          </li>
-          <li>
-            <strong>ECMAScript 6 (2015):</strong> Also known as ES6 or ES2015,
-            this version introduced major changes such as arrow functions,
-            classes, template literals, <code>let</code> and
-            <code>const</code> keywords, and modules.
-          </li>
-          <li>
-            <strong>Subsequent Versions:</strong> Annual updates have continued
-            to add new features and improvements.
-          </li>
-        </ul>
-      </div>
-
-      <h3>Modern JavaScript</h3>
-      <div class="highlight">
-        <p>
-          <strong>Node.js:</strong> In 2009, Ryan Dahl introduced Node.js,
-          allowing JavaScript to be used for server-side scripting. This
-          expanded the language's capabilities beyond the browser.
-        </p>
-        <p>
-          <strong>Frameworks and Libraries:</strong> JavaScript has a rich
-          ecosystem of frameworks and libraries like React, Angular, and Vue.js,
-          which help developers build complex web applications efficiently.
-        </p>
-        <p>
-          <strong>Community and Usage:</strong> JavaScript is one of the most
-          popular programming languages in the world, used by millions of
-          developers and supported by a vast community.
-        </p>
-      </div>
-
-      <h2>Let, Var, and Const in JavaScript</h2>
+      <h3>JavaScript History</h3>
       <p>
-        JavaScript provides three ways to declare variables: <code>var</code>,
-        <code>let</code>, and <code>const</code>. Understanding the differences
-        between them is crucial for writing effective and bug-free code.
+        The first version of JavaScript was ECMAScript 1 (ES1), released in 1997. This was followed by ECMAScript 2 (ES2) in 1998 and ECMAScript 3 (ES3) in 1999. ES3 introduced new features like regular expressions, try/catch blocks, and new statements.
       </p>
 
-      <h3>var</h3>
-      <div class="highlight">
-        <p>
-          <strong>Function Scope:</strong> Variables declared with
-          <code>var</code> are function-scoped, meaning they are accessible
-          within the function they are declared in, or globally if declared
-          outside any function.
-        </p>
-        <p>
-          <strong>Hoisting:</strong> <code>var</code> declarations are hoisted
-          to the top of their scope, meaning the declaration is processed before
-          any code is executed. However, initialization is not hoisted.
-        </p>
-        <p>
-          <strong>Re-declaration:</strong> You can re-declare variables using
-          <code>var</code> within the same scope without errors.
-        </p>
-        <pre><code>function exampleVar() {
-  console.log(a); // undefined due to hoisting
-  var a = 10;
-  console.log(a); // 10
-}
-exampleVar();
-console.log(a); // ReferenceError: a is not defined</code></pre>
-      </div>
+      <h3>JavaScript / ECMAScript</h3>
+      <p>
+        JavaScript was originally developed by Brendan Eich in 1995 for Netscape 2 and became the ECMA-262 standard in 1997. The Mozilla Foundation continued its development for Firefox, with its version matching ES5. Internet Explorer 4 was the first browser to support ECMAScript Edition 1 (ES1).
+      </p>
 
-      <h3>let</h3>
-      <div class="highlight">
-        <p>
-          <strong>Block Scope:</strong> Variables declared with
-          <code>let</code> are block-scoped, meaning they are only accessible
-          within the block, statement, or expression they are declared in.
-        </p>
-        <p>
-          <strong>Hoisting:</strong> <code>let</code> declarations are also
-          hoisted, but unlike <code>var</code>, they are not initialized until
-          the declaration is encountered. This leads to a "temporal dead zone"
-          where the variable cannot be accessed.
-        </p>
-        <p>
-          <strong>No Re-declaration:</strong> Re-declaring a
-          <code>let</code> variable in the same scope results in a syntax error.
-        </p>
-        <pre><code>function exampleLet() {
-  console.log(b); // ReferenceError: b is not defined
-  let b = 20;
-  console.log(b); // 20
-  {
-    let b = 30;
-    console.log(b); // 30 (block-scoped)
-  }
-  console.log(b); // 20
-}
-exampleLet();</code></pre>
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>ECMA</th>
+            <th>Browser</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1995</td>
+            <td>JavaScript was invented by Brendan Eich</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1996</td>
+            <td></td>
+            <td>Netscape 2 was released with JavaScript 1.0</td>
+          </tr>
+          <tr>
+            <td>1997</td>
+            <td>JavaScript became an ECMA standard (ECMA-262)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1997</td>
+            <td>ES1 ECMAScript 1 was released</td>
+            <td>IE 4 was the first browser to support ES1</td>
+          </tr>
+          <tr>
+            <td>1998</td>
+            <td>ES2 ECMAScript 2 was released</td>
+            <td>Netscape 4.2 was released with JavaScript 1.3</td>
+          </tr>
+          <tr>
+            <td>1999</td>
+            <td>ES3 ECMAScript 3 was released</td>
+            <td>IE 5 was the first browser to support ES3</td>
+          </tr>
+          <tr>
+            <td>2000</td>
+            <td>ES3</td>
+            <td>IE 5.5 was the first browser to support ES3</td>
+          </tr>
+          <tr>
+            <td>2000</td>
+            <td></td>
+            <td>Netscape 6 was released with JavaScript 1.5</td>
+          </tr>
+          <tr>
+            <td>2000</td>
+            <td></td>
+            <td>Firefox 1 was released with JavaScript 1.5</td>
+          </tr>
+          <tr>
+            <td>2008</td>
+            <td>ES4 ECMAScript 4 was abandoned</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2009</td>
+            <td>ES5 ECMAScript 5 was released</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2011</td>
+            <td>ES5</td>
+            <td>IE 9 was the first browser to support ES5</td>
+          </tr>
+          <tr>
+            <td>2011</td>
+            <td></td>
+            <td>Firefox 4 was released with JavaScript 1.8.5</td>
+          </tr>
+          <tr>
+            <td>2012</td>
+            <td></td>
+            <td>Full support for ES5 in Safari 6</td>
+          </tr>
+          <tr>
+            <td>2012</td>
+            <td></td>
+            <td>Full support for ES5 in IE 10</td>
+          </tr>
+          <tr>
+            <td>2012</td>
+            <td></td>
+            <td>Full support for ES5 in Chrome 23</td>
+          </tr>
+          <tr>
+            <td>2013</td>
+            <td></td>
+            <td>Full support for ES5 in Firefox 21</td>
+          </tr>
+          <tr>
+            <td>2013</td>
+            <td></td>
+            <td>Full support for ES5 in Opera 15</td>
+          </tr>
+          <tr>
+            <td>2014</td>
+            <td></td>
+            <td>Full support for ES5 in all browsers</td>
+          </tr>
+          <tr>
+            <td>2015</td>
+            <td>ES6 ECMAScript 6 was released</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td></td>
+            <td>Full support for ES6 in Chrome 51</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td></td>
+            <td>Full support for ES6 in Opera 38</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td></td>
+            <td>Full support for ES6 in Safari 10</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td></td>
+            <td>Full support for ES6 in Firefox 54</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td></td>
+            <td>Full support for ES6 in Edge 15</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td></td>
+            <td>Full support for ES6 in all browsers</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h3>const</h3>
-      <div class="highlight">
-        <p>
-          <strong>Block Scope:</strong> Like <code>let</code>,
-          <code>const</code> is block-scoped.
-        </p>
-        <p>
-          <strong>Hoisting:</strong> <code>const</code> declarations are hoisted
-          but are not initialized, similar to <code>let</code>. Accessing the
-          variable before its declaration results in a ReferenceError.
-        </p>
-        <p>
-          <strong>Immutability:</strong> <code>const</code> variables cannot be
-          reassigned after their initial assignment. However, this does not mean
-          the value is immutable. For objects and arrays, the contents can still
-          be modified.
-        </p>
-        <pre><code>function exampleConst() {
-  const c = 30;
-  console.log(c); // 30
-  // c = 40; // TypeError: Assignment to constant variable.
+      <h3>The ECMA Technical Committee 39</h3>
+      <p>
+        In 1996, Netscape and Brendan Eich presented JavaScript to the ECMA international standards organization. A technical committee (TC39) was established to oversee the language's development. ECMA-262 Edition 1 was released in June 1997.
+      </p>
 
-  const arr = [1, 2, 3];
-  arr.push(4); // Allowed
-  console.log(arr); // [1, 2, 3, 4]
+      <h3>From ES4 to ES6</h3>
+      <p>
+        In 2008, the TC39 committee faced a split between two camps:
+      </p>
+      <ul>
+        <li>The ECMAScript 3.1 Camp: Microsoft and Yahoo advocated for an incremental upgrade from ES3.</li>
+        <li>The ECMAScript 4 Camp: Adobe, Mozilla, Opera, and Google pushed for a substantial overhaul with ES4.</li>
+      </ul>
+      <p>
+        On August 13, 2008, Brendan Eich announced that the standards body was divided. The compromise was to rename ES4 to ES5 and focus on a new major release. ES5, released in 2009, was widely adopted by browsers by July 2013.
+      </p>
 
-  const obj = { key: 'value' };
-  obj.key = 'newValue'; // Allowed
-  console.log(obj); // { key: 'newValue' }
-}
-exampleConst();</code></pre>
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chrome</td>
+            <td>23</td>
+            <td>Nov 2012</td>
+          </tr>
+          <tr>
+            <td>IE/Edge</td>
+            <td>10</td>
+            <td>Sep 2012</td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>21</td>
+            <td>May 2013</td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>6</td>
+            <td>Jul 2012</td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td>15</td>
+            <td>Jul 2013</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h3>Best Practices</h3>
-      <div class="highlight">
-        <ul>
-          <li>
-            <strong
-              >Use <code>let</code> for variables that will be
-              reassigned.</strong
-            >
-          </li>
-          <li>
-            <strong
-              >Use <code>const</code> for variables that should not be
-              reassigned.</strong
-            >
-          </li>
-          <li>
-            <strong
-              >Avoid using <code>var</code> to prevent issues related to
-              hoisting and scope.</strong
-            >
-          </li>
-        </ul>
-      </div>
+      <p>
+        ECMAScript 6 (ES6), released in 2015, was also a major success. Full support was achieved in all major browsers by March 2017.
+      </p>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Browser</th>
+            <th>Version</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chrome</td>
+            <td>51</td>
+            <td>May 2016</td>
+          </tr>
+          <tr>
+            <td>Edge</td>
+            <td>14</td>
+            <td>Aug 2016</td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td>52</td>
+            <td>Mar 2017</td>
+          </tr>
+          <tr>
+            <td>Safari</td>
+            <td>10</td>
+            <td>Sep 2016</td>
+          </tr>
+          <tr>
+            <td>Opera</td>
+            <td>38</td>
+            <td>Jun 2016</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>ECMAScript Editions</h3>
+      <ul>
+        <li><strong>ES1</strong> ECMAScript 1 (1997) - The first edition.</li>
+        <li><strong>ES2</strong> ECMAScript 2 (1998) - Editorial changes.</li>
+        <li><strong>ES3</strong> ECMAScript 3 (1999) - Introduced regular expressions, try/catch, and new statements.</li>
+        <li><strong>ES4</strong> ECMAScript 4 - Never released.</li>
+        <li><strong>ES5</strong> ECMAScript 5 (2009) - Added "strict mode", JSON support, and new methods for arrays and strings.</li>
+        <li><strong>ES6</strong> ECMAScript 2015 - Introduced `let` and `const`, default parameters, and new array methods.</li>
+        <li><strong>ECMAScript 2016</strong> - Added the exponential operator (**), and `Array.includes()`.</li>
+        <li><strong>ECMAScript 2017</strong> - Added string padding, `Object.entries()`, `Object.values()`, async functions, and shared memory.</li>
+        <li><strong>ECMAScript 2018</strong> - Added rest/spread properties, asynchronous iteration, `Promise.finally()`, and enhancements to `RegExp`.</li>
+        <li><strong>ECMAScript 2019</strong> - Introduced `String.trimStart()`, `String.trimEnd()`, `Array.flat()`, `Object.fromEntries`, and optional catch binding.</li>
+      </ul>
     </div>
 
-    <div class="footer">
-      &copy; 2024 Juwon Code | Valuemax Javascript  All rights reserved.
-    </div>
+    <footer class="footer text-center py-3">
+      &copy; 2024 Juwon Code | Valuemax JavaScript All rights reserved.
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

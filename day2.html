@@ -3,40 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Documentation - Day 2</title>
+    <title>JavaScript Documentation - Variables</title>
     <link rel="stylesheet" href="day2.css">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-  </head>
-  <style>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f7f8fa;
+        color: #333;
+      }
 
-  </style>
+      .navbar {
+        background-color: #ffffff;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        max-width: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.5em;
+      }
+
+      .navbar-nav {
+        margin: auto;
+      }
+
+      .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .content {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h2, h3 {
+        margin-top: 20px;
+      }
+
+      code {
+        background-color: #f0f0f5;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+
+      pre {
+        background-color: #f0f0f5;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 0.95em;
+        overflow-x: auto;
+      }
+
+      .highlight {
+        background-color: #e8f0fe;
+        border-left: 5px solid #4285f4;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        border-top: 1px solid #dddddd;
+      }
+    </style>
+  </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Juwon Code</a>
-      <button class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-      >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Day 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="day2.html">Day 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="day3.html">Day 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="day4.html">Day 4</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
+          <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
           <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
           <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
           <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
@@ -46,168 +105,144 @@
     </nav>
 
     <div class="container content">
-      <h2>Objects & Arrays in JavaScript</h2>
-      <p>
-        <strong>Objects</strong> are collections of related data and functions,
-        stored as key-value pairs. Keys are also called properties or
-        attributes, and values can be any data type, including other objects.
-      </p>
+      <h2>Difference Between `var`, `let`, and `const` Keywords in JavaScript</h2>
+      <p>The keywords <code>var</code>, <code>let</code>, and <code>const</code> in JavaScript define the variable scope and behavior. The <code>var</code> keyword has function scope and is hoisted. The <code>let</code> and <code>const</code> keywords have block scope, with <code>const</code> requiring an initial value and preventing reassignment.</p>
 
-      <h3>Creating an Object</h3>
-      <div class="highlight">
-        <p>We can create an object using object literal syntax.</p>
-        <pre><code>// Using object literal syntax
-const personTaiwo = {
-  firstName: "Taiwo",
-  lastName: "Ojo",
-  age: 25,
-  greet: function() {
-    console.log("Hello, my name is " + this.firstName + " " + this.lastName);
-  }
-};
+      <p>A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these features. While this assumption might be partially true, it's still possible that some of these features remain a mystery to some devs.</p>
 
-const personEmmanuel = {
-  firstName: "Emmanuel",
-  lastName: "Ibrahim",
-  age: 30,
-  greet: function() {
-    console.log("Hello, my name is " + this.firstName + " " + this.lastName);
-  }
-};</code></pre>
-      </div>
+      <p>One of the features that came with ES6 is the addition of <code>let</code> and <code>const</code>, which can be used for variable declaration. The question is, what makes them different from good ol' <code>var</code> which we've been using? If you are still not clear about this, then this article is for you.</p>
 
-      <h3>Accessing Object Properties</h3>
-      <div class="highlight">
-        <p>
-          You can access object properties using dot notation or bracket
-          notation.
-        </p>
-        <pre><code>// Dot notation
-console.log(personTaiwo.firstName); // Taiwo
-personTaiwo.greet(); // Hello, my name is Taiwo Ojo
+      <p>In this article, we'll discuss <code>var</code>, <code>let</code>, and <code>const</code> with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out.</p>
 
-// Bracket notation
-console.log(personEmmanuel['lastName']); // Ibrahim
-personEmmanuel['greet'](); // Hello, my name is Emmanuel Ibrahim</code></pre>
-      </div>
+      <h3>Var</h3>
+      <p>Before the advent of ES6, <code>var</code> declarations ruled. There are issues associated with variables declared with <code>var</code>, though. That is why it was necessary for new ways to declare variables to emerge. First, let's get to understand <code>var</code> more before we discuss those issues.</p>
 
-      <h3>Modifying Object Properties</h3>
-      <div class="highlight">
-        <p>We can add, update, or delete properties of an object.</p>
-        <pre><code>// Add a new property
-personTaiwo.hobby = "Reading";
-console.log(personTaiwo.hobby); // Reading
-
-// Update an existing property
-personEmmanuel.age = 31;
-console.log(personEmmanuel.age); // 31
-
-// Delete a property
-delete personTaiwo.age;
-console.log(personTaiwo.age); // undefined</code></pre>
-      </div>
-
-      <h3>Iterating over Object Properties</h3>
-      <div class="highlight">
-        <p>
-          We can iterate over the properties of an object using a
-          <code>for...in</code> loop.
-        </p>
-        <pre><code>for (let key in personTaiwo) {
-  console.log(key + ": " + personTaiwo[key]);
+      <h4>Scope of `var`</h4>
+      <p>Scope essentially means where these variables are available for use. <code>var</code> declarations are globally scoped or function/locally scoped.</p>
+      <p>The scope is global when a <code>var</code> variable is declared outside a function. This means that any variable that is declared with <code>var</code> outside a function block is available for use in the whole window. <code>var</code> is function scoped when it is declared within a function. This means that it is available and can be accessed only within that function.</p>
+      <p>To understand further, look at the example below:</p>
+      <pre><code>var greeter = "hey hi";
+function newFunction() {
+  var hello = "hello";
 }</code></pre>
-      </div>
-
-      <h2>Arrays in JavaScript</h2>
-      <p>
-        <strong>Arrays</strong> are ordered collections of values, where each
-        value is called an element and has an index.
-      </p>
-
-      <h3>Creating an Array</h3>
-      <div class="highlight">
-        <p>We can create arrays using array literal syntax.</p>
-        <pre><code>const names = ["Taiwo", "Emmanuel", "Kemi"];
-const ages = [25, 30, 27];</code></pre>
-      </div>
-
-      <h3>Accessing Array Elements</h3>
-      <div class="highlight">
-        <p>We can access array elements using their index.</p>
-        <pre><code>console.log(names[0]); // Taiwo
-console.log(ages[1]); // 30</code></pre>
-      </div>
-
-      <h3>Modifying Array Elements</h3>
-      <div class="highlight">
-        <p>We can add, update, or remove elements from an array.</p>
-        <pre><code>// Add elements
-names.push("Tunde");
-console.log(names); // ["Taiwo", "Emmanuel", "Kemi", "Tunde"]
-
-// Update elements
-ages[0] = 26;
-console.log(ages); // [26, 30, 27]
-
-// Remove elements
-names.pop();
-console.log(names); // ["Taiwo", "Emmanuel", "Kemi"]</code></pre>
-      </div>
-
-      <h3>Iterating over Array Elements</h3>
-      <div class="highlight">
-        <p>
-          We can iterate over array elements using a <code>for</code> loop or
-          <code>for...of</code> loop.
-        </p>
-        <pre><code>for (let i = 0; i < names.length; i++) {
-  console.log(names[i]);
+      <p>Here, <code>greeter</code> is globally scoped because it exists outside a function while <code>hello</code> is function scoped. So we cannot access the variable <code>hello</code> outside of a function. So if we do this:</p>
+      <pre><code>var tester = "hey hi";
+function newFunction() {
+  var hello = "hello";
 }
+console.log(hello); // error: hello is not defined</code></pre>
 
-for (let name of names) {
-  console.log(name);
-}</code></pre>
-      </div>
+      <h4>Re-declaration and Updating</h4>
+      <p><code>var</code> variables can be re-declared and updated within the same scope.</p>
+      <pre><code>var greeter = "hey hi";
+var greeter = "say Hello instead";
+console.log(greeter); // "say Hello instead"</code></pre>
+      <pre><code>var greeter = "hey hi";
+greeter = "say Hello instead";
+console.log(greeter); // "say Hello instead"</code></pre>
 
-      <h3>Common Array Methods</h3>
-      <div class="highlight">
-        <ul>
-          <li>
-            <code>push()</code>: Adds one or more elements to the end of an
-            array.
-          </li>
-          <li><code>pop()</code>: Removes the last element from an array.</li>
-          <li>
-            <code>shift()</code>: Removes the first element from an array.
-          </li>
-          <li>
-            <code>unshift()</code>: Adds one or more elements to the beginning
-            of an array.
-          </li>
-          <li>
-            <code>slice()</code>: Returns a shallow copy of a portion of an
-            array.
-          </li>
-          <li>
-            <code>splice()</code>: Adds or removes elements from an array.
-          </li>
-        </ul>
-      </div>
+      <h4>Hoisting of `var`</h4>
+      <p>Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. This means that if we do this:</p>
+      <pre><code>console.log(greeter);
+var greeter = "say hello";</code></pre>
+      <p>it is interpreted as this:</p>
+      <pre><code>var greeter;
+console.log(greeter); // greeter is undefined
+greeter = "say hello";</code></pre>
+      <p>So <code>var</code> variables are hoisted to the top of their scope and initialized with a value of <code>undefined</code>.</p>
 
-      <h2>Conclusion</h2>
-      <p>
-        Understanding objects and arrays is fundamental to mastering JavaScript.
-        They are used to store and manipulate data, making our code more dynamic
-        and powerful.
-      </p>
+      <h4>Problem with `var`</h4>
+      <p>There's a weakness that comes with <code>var</code>. I'll use the example below to explain:</p>
+      <pre><code>var greeter = "hey hi";
+var times = 4;
+if (times > 3) {
+  var greeter = "say Hello instead";
+}
+console.log(greeter); // "say Hello instead"</code></pre>
+      <p>So, since <code>times > 3</code> returns true, <code>greeter</code> is redefined to "say Hello instead". While this is not a problem if you knowingly want <code>greeter</code> to be redefined, it becomes a problem when you do not realize that a variable <code>greeter</code> has already been defined before. If you have used <code>greeter</code> in other parts of your code, you might be surprised at the output you might get. This will likely cause a lot of bugs in your code. This is why <code>let</code> and <code>const</code> are necessary.</p>
+
+      <h3>Let</h3>
+      <p><code>let</code> is now preferred for variable declaration. It's no surprise as it comes as an improvement to <code>var</code> declarations. It also solves the problem with <code>var</code> that we just covered. Let's consider why this is so.</p>
+
+      <h4>Block Scope</h4>
+      <p><code>let</code> is block scoped. A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.</p>
+      <p>So a variable declared in a block with <code>let</code> is only available for use within that block. Let me explain this with an example:</p>
+      <pre><code>let greeting = "say Hi";
+let times = 4;
+if (times > 3) {
+  let hello = "say Hello instead";
+  console.log(hello); // "say Hello instead"
+}
+console.log(hello); // hello is not defined</code></pre>
+      <p>We see that using <code>hello</code> outside its block (the curly braces where it was defined) returns an error. This is because <code>let</code> variables are block scoped.</p>
+
+      <h4>Updating and Re-declaration</h4>
+      <p><code>let</code> can be updated but not re-declared within the same scope. So while this will work:</p>
+      <pre><code>let greeting = "say Hi";
+greeting = "say Hello instead";
+console.log(greeting); // "say Hello instead"</code></pre>
+      <p>This will return an error:</p>
+      <pre><code>let greeting = "say Hi";
+let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared</code></pre>
+      <p>However, if the same variable is defined in different scopes, there will be no error:</p>
+      <pre><code>let greeting = "say Hi";
+if (true) {
+  let greeting = "say Hello instead";
+  console.log(greeting); // "say Hello instead"
+}
+console.log(greeting); // "say Hi"</code></pre>
+      <p>Why is there no error? This is because both instances are treated as different variables since they have different scopes.</p>
+      <p>This fact makes <code>let</code> a better choice than <code>var</code>. When using <code>let</code>, you don't have to bother if you have used a name for a variable before as a variable exists only within its scope. Also, since a variable cannot be declared more than once within a scope, then the problem discussed earlier that occurs with <code>var</code> does not happen.</p>
+
+      <h4>Hoisting of `let`</h4>
+      <p>Just like <code>var</code>, <code>let</code> declarations are hoisted to the top. Unlike <code>var</code> which is initialized as <code>undefined</code>, the <code>let</code> keyword is not initialized. So if you try to use a <code>let</code> variable before declaration, you'll get a Reference Error.</p>
+
+      <h3>Const</h3>
+      <p>Variables declared with the <code>const</code> keyword maintain constant values. <code>const</code> declarations share some similarities with <code>let</code> declarations.</p>
+
+      <h4>Block Scope</h4>
+      <p><code>const</code> declarations are block scoped, like <code>let</code> declarations. They can only be accessed within the block they were declared.</p>
+
+      <h4>Updating and Re-declaration</h4>
+      <p><code>const</code> cannot be updated or re-declared. This means that the value of a variable declared with <code>const</code> remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with <code>const</code>, we can neither do this:</p>
+      <pre><code>const greeting = "say Hi";
+greeting = "say Hello instead"; // error: Assignment to constant variable.</code></pre>
+      <p>nor this:</p>
+      <pre><code>const greeting = "say Hi";
+const greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared</code></pre>
+      <p>Every <code>const</code> declaration, therefore, must be initialized at the time of declaration.</p>
+
+      <h4>Constant Value with Objects</h4>
+      <p>This behavior is somehow different when it comes to objects declared with <code>const</code>. While a <code>const</code> object cannot be updated, the properties of this object can be updated. Therefore, if we declare a <code>const</code> object as this:</p>
+      <pre><code>const greeting = {
+  message: "say Hi",
+  times: 4
+};</code></pre>
+      <p>while we cannot do this:</p>
+      <pre><code>greeting = {
+  words: "Hello",
+  number: "five"
+}; // error: Assignment to constant variable.</code></pre>
+      <p>we can do this:</p>
+      <pre><code>greeting.message = "say Hello instead";</code></pre>
+      <p>This will update the value of <code>greeting.message</code> without returning errors.</p>
+
+      <h4>Hoisting of `const`</h4>
+      <p>Just like <code>let</code>, <code>const</code> declarations are hoisted to the top but are not initialized. So just in case you missed the differences, here they are:</p>
+      <ul>
+        <li><code>var</code> declarations are globally scoped or function scoped while <code>let</code> and <code>const</code> are block scoped.</li>
+        <li><code>var</code> variables can be updated and re-declared within its scope; <code>let</code> variables can be updated but not re-declared; <code>const</code> variables can neither be updated nor re-declared.</li>
+        <li>They are all hoisted to the top of their scope. But while <code>var</code> variables are initialized with <code>undefined</code>, <code>let</code> and <code>const</code> variables are not initialized.</li>
+        <li>While <code>var</code> and <code>let</code> can be declared without being initialized, <code>const</code> must be initialized during declaration.</li>
+      </ul>
     </div>
 
-    <div class="footer">
-      &copy; 2024 Juwon Code | Valuemax Javascript All rights reserved.
-    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Juwon Code. All rights reserved.</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

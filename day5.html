@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My JavaScript Calculator</title>
+    <title>Javascript Time Locator</title>
     <link rel="stylesheet" href="day5.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="#">Juwon Code</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -27,84 +28,61 @@
         </div>
     </nav>
 
-    <div class="container content">
-        <div class="heading">My JavaScript Calculator</div>
-        <div class="calculator">
-            <div class="input-group">
-                <input type="text" id="myinput1" placeholder="Enter number">
-                <span class="operator" id="symbol">+</span>
-                <input type="text" id="myinput2" placeholder="Enter number">
-            </div>
-            <button class="addbtn">+</button>
-            <button class="subbtn">-</button>
-            <button class="mulbtn">*</button>
-            <button class="divbtn">/</button>
-            <div class="result" id="answer"></div>
+    <h1 id="greetings" style="display: none;"></h1>
+
+    <div class="container mt-5">
+        <div class="text-center mt-4">
+            <button onclick="greetMe()" class="btn btn-secondary">
+                Greet Me
+            </button>
+        </div>
+        <div class="code-block mt-4">
+            <pre><code class="pre-co">
+                let currentTime = new Date().getHours();
+                switch (true) {
+                    case (currentTime < 11):
+                        document.getElementById('greetings').innerHTML = "GOOD MORNING";
+                        break;
+                    case (currentTime < 16):
+                        document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
+                        break;
+                    case (currentTime < 20):
+                        document.getElementById('greetings').innerHTML = "GOOD EVENING";
+                        break;
+                    default:
+                        document.getElementById('greetings').innerHTML = "GOOD NIGHT";
+                }
+                document.getElementById('greetings').style.display = "block";
+            </code></pre>
         </div>
     </div>
 
-    <div class="footer">
-        &copy; 2024 Juwon Code | Valuemax JavaScript All rights reserved.
-    </div>
+    <footer>
+        &copy; 2024 Juwon Design. All rights reserved.
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        let btnAdd = document.querySelector('.addbtn');
-        let btnSubtract = document.querySelector('.subbtn');
-        let btnMultiply = document.querySelector('.mulbtn');
-        let btnDivide = document.querySelector('.divbtn');
-
-        function validateInputs() {
-            let numberone = document.querySelector('#myinput1').value;
-            let numbertwo = document.querySelector('#myinput2').value;
-            if (numberone === '' || numbertwo === '') {
-                document.getElementById('answer').innerHTML = "Please input both fields";
-                return false;
+        function greetMe(){
+            let currentTime = new Date().getHours();
+            switch (true) {
+                case (currentTime < 11):
+                    document.getElementById('greetings').innerHTML = "GOOD MORNING";
+                    break;
+                case (currentTime < 16):
+                    document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
+                    break;
+                case (currentTime < 20):
+                    document.getElementById('greetings').innerHTML = "GOOD EVENING";
+                    break;
+                default:
+                    document.getElementById('greetings').innerHTML = "GOOD NIGHT";
             }
-            return true;
+            document.getElementById('greetings').style.display = "block";
         }
-
-        btnAdd.addEventListener('click', () => {
-            if (validateInputs()) {
-                let numberone = Number(document.querySelector('#myinput1').value);
-                let numbertwo = Number(document.querySelector('#myinput2').value);
-                document.getElementById('symbol').innerHTML = '+';
-                document.getElementById('answer').innerHTML = `= ${numberone + numbertwo}`;
-            }
-        });
-
-        btnSubtract.addEventListener('click', () => {
-            if (validateInputs()) {
-                let numberone = Number(document.querySelector('#myinput1').value);
-                let numbertwo = Number(document.querySelector('#myinput2').value);
-                document.getElementById('symbol').innerHTML = '-';
-                document.getElementById('answer').innerHTML = `= ${numberone - numbertwo}`;
-            }
-        });
-
-        btnMultiply.addEventListener('click', () => {
-            if (validateInputs()) {
-                let numberone = Number(document.querySelector('#myinput1').value);
-                let numbertwo = Number(document.querySelector('#myinput2').value);
-                document.getElementById('symbol').innerHTML = '*';
-                document.getElementById('answer').innerHTML = `= ${numberone * numbertwo}`;
-            }
-        });
-
-        btnDivide.addEventListener('click', () => {
-            if (validateInputs()) {
-                let numberone = Number(document.querySelector('#myinput1').value);
-                let numbertwo = Number(document.querySelector('#myinput2').value);
-                if (numbertwo === 0) {
-                    document.getElementById('answer').innerHTML = "Cannot divide by zero";
-                } else {
-                    document.getElementById('symbol').innerHTML = '/';
-                    document.getElementById('answer').innerHTML = `= ${numberone / numbertwo}`;
-                }
-            }
-        });
     </script>
+
+    <!-- Boostrap CDN Javascript Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

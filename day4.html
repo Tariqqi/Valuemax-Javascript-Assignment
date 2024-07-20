@@ -1,155 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Time Locator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Documentation - Comparison and Logical Operators</title>
+    <link rel="stylesheet" href="day2.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom right, #f0f0f5, #d6d6e0);
-            color: #333;
-            animation: fadeIn 1.5s ease-in-out;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f7f8fa;
+        color: #333;
+      }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            text-align: center;
-            padding: 20px 40px;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: slideIn 1.5s forwards ease-in-out;
-        }
+      .navbar {
+        background-color: #ffffff;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        max-width: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-        footer {
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            bottom: 0;
-        }
+      .navbar-brand {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.5em;
+      }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+      .navbar-nav {
+        margin: auto;
+      }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
 
-        .navbar {
-            background-color: #ffffff;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            margin: 0 auto 20px auto; 
-            position: absolute;
-            top: 10px;
-        }
+      .content {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
 
-        .navbar-brand {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.5em;
-        }
+      h2, h3 {
+        margin-top: 20px;
+      }
 
-        .navbar-nav {
-            margin: auto;
-        }
+      code {
+        background-color: #f0f0f5;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
 
-        .navbar-nav .nav-link {
-            color: #333;
-            font-weight: 500;
-        }
+      pre {
+        background-color: #f0f0f5;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 0.95em;
+        overflow-x: auto;
+      }
 
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 1.5rem;
-                padding: 15px 20px;
-            }
+      .highlight {
+        background-color: #e8f0fe;
+        border-left: 5px solid #4285f4;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+      }
 
-            .navbar {
-                width: 95%;
-            }
-
-            .navbar-brand {
-                font-size: 1.2em;
-            }
-
-            .navbar-nav .nav-link {
-                font-size: 0.9em;
-            }
-        }
+      .footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        border-top: 1px solid #dddddd;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Juwon Code</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
-                <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
-                <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
-                <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
-                <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
+          <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
+          <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
+          <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
+          <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
+          <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <h1 id="greetings"></h1>
+    <div class="container content">
+      <h2>JavaScript Comparison and Logical Operators</h2>
+      <p>Comparison operators compare values and return <code>true</code> or <code>false</code>. The operators include: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>===</code>, and <code>!==</code>.</p>
+      <p>Logical operators combine multiple boolean expressions or values and provide a single boolean output. The operators include: <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code>.</p>
 
-    <footer>
-        &copy; 2024 Juwon Design. All rights reserved.
-    </footer>
-   
-    <script>
-        let currentTime = new Date().getHours();
-        
-        switch (true) {
-            case (currentTime < 11):
-                document.getElementById('greetings').innerHTML = "GOOD MORNING";
-                break;
-            case (currentTime < 16):
-                document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
-                break;
-            case (currentTime < 20):
-                document.getElementById('greetings').innerHTML = "GOOD EVENING";
-                break;
-            default:
-                document.getElementById('greetings').innerHTML = "GOOD NIGHT";
-        }
-    </script>
+      <h3>Comparison Operators</h3>
+      <p>Less than (<code>&lt;</code>) — returns <code>true</code> if the value on the left is less than the value on the right, otherwise it returns <code>false</code>.</p>
+      <p>Greater than (<code>&gt;</code>) — returns <code>true</code> if the value on the left is greater than the value on the right, otherwise it returns <code>false</code>.</p>
+      <p>Less than or equal to (<code>&lt;=</code>) — returns <code>true</code> if the value on the left is less than or equal to the value on the right, otherwise it returns <code>false</code>.</p>
+      <p>Greater than or equal to (<code>&gt;=</code>) — returns <code>true</code> if the value on the left is greater than or equal to the value on the right, otherwise it returns <code>false</code>.</p>
+      <p>Equal to (<code>===</code>) — returns <code>true</code> if the value on the left is equal to the value on the right, otherwise it returns <code>false</code>.</p>
+      <p>Not equal to (<code>!==</code>) — returns <code>true</code> if the value on the left is not equal to the value on the right, otherwise it returns <code>false</code>.</p>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+      <h3>Logical Operators</h3>
+      <p>Comparison operators allow us to assert the equality of a statement with JavaScript. For example, we can assert whether two values or expressions are equal with <code>===</code>, or, whether one value is greater than another with <code>&gt;</code>.</p>
+      <p>There are scenarios, however, in which we must assert whether multiple values or expressions are true. In JavaScript, we can use logical operators to make these assertions.</p>
+
+      <p><code>&amp;&amp;</code> (and) — This operator will be truthy (act like <code>true</code>) if and only if the expressions on both sides of it are true.</p>
+      <p><code>||</code> (or) — This operator will be truthy if the expression on either side of it is true. Otherwise, it will be falsy (act like <code>false</code>).</p>
+
+      <pre><code>var isTrue = ('yellow' === 'green') &amp;&amp; (4 &gt;= 4);
+      </code></pre>
+
+      <p>In the example above, we check if the string 'yellow' is equal to the string 'green' and <code>&amp;&amp;</code> if 4 is greater than or equal to 4. Let’s break this down into the two comparison expressions.</p>
+      <p>The first expression is false, because the string 'yellow' is not the same (equal) as the string 'green'.</p>
+      <p>The second expression is true, because the number 4 is greater than or equal to 4.</p>
+      <p>The <code>&amp;&amp;</code> operator requires that both expressions be true in order for the expression to be truthy. Because one expression is false and the other is true, the expression is falsy and evaluates to false.</p>
+
+      <h3>How Can it be Used</h3>
+      <p>Comparison operators are used in logical statements to determine equality or difference between variables or values. Given that <code>x = 5</code>, the table below explains the comparison operators:</p>
+
+      <h4>Conditional Statements</h4>
+      <p>Comparison operators can be used in conditional statements to compare values and take action depending on the result:</p>
+
+      <pre><code>if (age &lt; 18) text = "Too young to buy alcohol";</code></pre>
+      <p>You will learn more about the use of conditional statements in the next chapter of this tutorial.</p>
+
+      <h4>Logical Operators</h4>
+      <p>Logical operators are used to determine the logic between variables or values. Given that <code>x = 6</code> and <code>y = 3</code>, the table below explains the logical operators:</p>
+
+      <h3>Conditional (Ternary) Operator</h3>
+      <p>JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.</p>
+      <p>Syntax:</p>
+      <pre><code>variablename = (condition) ? value1:value2</code></pre>
+
+      <p>Example:</p>
+      <pre><code>var age = 18;
+      var voteable = (age &lt; 18) ? "Too young":"Old enough";
+      console.log(voteable); // Prints "Old enough"</code></pre>
+
+      <h3>Conclusion</h3>
+      <p>Understanding comparison and logical operators is fundamental to controlling the flow of logic in your programs. They allow you to make decisions and execute code conditionally, which is a core aspect of programming.</p>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Juwon Code</p>
+    </div>
+  </body>
 </html>
+
+
+
+
+
+
