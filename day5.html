@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript Time Locator</title>
-    <link rel="stylesheet" href="day5.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="day5.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Juwon Code</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
-                <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
-                <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
-                <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
-                <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day2.html">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day3.html">Day 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day4.html">Day 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day5.html">Day 5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day6.html">Day 6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day7.html">Day 7</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day8.html">Day 8</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <h1 id="greetings" style="display: none;"></h1>
+    <h1 id="greetings" style="display: none"></h1>
 
     <div class="container mt-5">
-        <div class="text-center mt-4">
-            <button onclick="greetMe()" class="btn btn-secondary">
-                Greet Me
-            </button>
-        </div>
-        <div class="code-block mt-4">
-            <pre><code class="pre-co">
-                let currentTime = new Date().getHours();
-                switch (true) {
-                    case (currentTime < 11):
-                        document.getElementById('greetings').innerHTML = "GOOD MORNING";
-                        break;
-                    case (currentTime < 16):
-                        document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
-                        break;
-                    case (currentTime < 20):
-                        document.getElementById('greetings').innerHTML = "GOOD EVENING";
-                        break;
-                    default:
-                        document.getElementById('greetings').innerHTML = "GOOD NIGHT";
-                }
-                document.getElementById('greetings').style.display = "block";
-            </code></pre>
-        </div>
+      <div class="text-center mt-4">
+        <button onclick="greetMe()" class="btn btn-secondary">Greet Me</button>
+      </div>
+      <div class="code-block mt-4">
+        <pre><code class="pre-co">
+      let currentTime = new Date().getHours();
+      switch (true) {
+      case (currentTime < 11):
+      document.getElementById('greetings').innerHTML = "GOOD MORNING";
+      break;
+      case (currentTime < 16):
+      document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
+      break;
+      case (currentTime < 20):
+      document.getElementById('greetings').innerHTML = "GOOD EVENING";
+      break;
+      default:
+      document.getElementById('greetings').innerHTML = "GOOD NIGHT";
+      }
+      document.getElementById('greetings').style.display = "block";
+      </code></pre>
+      </div>
     </div>
 
-    <footer>
-        &copy; 2024 Juwon Design. All rights reserved.
-    </footer>
+    <footer>&copy; 2024 Juwon Design. All rights reserved.</footer>
 
     <script>
-        function greetMe(){
-            let currentTime = new Date().getHours();
-            switch (true) {
-                case (currentTime < 11):
-                    document.getElementById('greetings').innerHTML = "GOOD MORNING";
-                    break;
-                case (currentTime < 16):
-                    document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
-                    break;
-                case (currentTime < 20):
-                    document.getElementById('greetings').innerHTML = "GOOD EVENING";
-                    break;
-                default:
-                    document.getElementById('greetings').innerHTML = "GOOD NIGHT";
-            }
-            document.getElementById('greetings').style.display = "block";
+      function greetMe() {
+        let currentTime = new Date().getHours();
+        switch (true) {
+          case currentTime < 11:
+            document.getElementById("greetings").innerHTML = "GOOD MORNING";
+            break;
+          case currentTime < 16:
+            document.getElementById("greetings").innerHTML = "GOOD AFTERNOON";
+            break;
+          case currentTime < 20:
+            document.getElementById("greetings").innerHTML = "GOOD EVENING";
+            break;
+          default:
+            document.getElementById("greetings").innerHTML = "GOOD NIGHT";
         }
+        document.getElementById("greetings").style.display = "block";
+      }
     </script>
 
     <!-- Boostrap CDN Javascript Link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
