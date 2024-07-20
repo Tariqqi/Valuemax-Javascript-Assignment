@@ -31,8 +31,9 @@ footer {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: fixed;
     bottom: 0;
+    left: 0;
 }
 
 @keyframes fadeIn {
@@ -56,9 +57,12 @@ footer {
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-    margin: 0 auto 20px auto; 
-    position: absolute;
+    margin: 0 auto 20px auto;
+    position: fixed;
     top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -93,8 +97,8 @@ footer {
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 0.7rem;
-        padding: 10px 12px;
+        font-size: 1.5rem;
+        padding: 15px 20px;
     }
 
     .navbar {
@@ -107,5 +111,9 @@ footer {
 
     .navbar-nav .nav-link {
         font-size: 0.9em;
+    }
+
+    footer {
+        padding: 5px 0;
     }
 }

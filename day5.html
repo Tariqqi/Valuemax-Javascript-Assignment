@@ -60,20 +60,20 @@
       <div class="code-block mt-4">
         <pre><code class="pre-co">
     let currentTime = new Date().getHours();
-   switch (true) {
-   case (currentTime < 11):
-   document.getElementById('greetings').innerHTML = "GOOD MORNING";
-   break;
-   case (currentTime < 16):
-   document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
-   break;
-   case (currentTime < 20):
-   document.getElementById('greetings').innerHTML = "GOOD EVENING";
-   break;
-   default:
-   document.getElementById('greetings').innerHTML = "GOOD NIGHT";
-      }
-      document.getElementById('greetings').style.display = "block";
+    switch (true) {
+        case currentTime < 11:
+            document.getElementById('greetings').innerHTML = "GOOD MORNING";
+            break;
+        case currentTime < 16:
+            document.getElementById('greetings').innerHTML = "GOOD AFTERNOON";
+            break;
+        case currentTime < 20:
+            document.getElementById('greetings').innerHTML = "GOOD EVENING";
+            break;
+        default:
+            document.getElementById('greetings').innerHTML = "GOOD NIGHT";
+    }
+    document.getElementById('greetings').style.display = "block";
       </code></pre>
       </div>
     </div>
