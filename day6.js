@@ -1,3 +1,4 @@
+// Calculator
 let btnAdd = document.querySelector(".addbtn");
 let btnSubtract = document.querySelector(".subbtn");
 let btnMultiply = document.querySelector(".mulbtn");
