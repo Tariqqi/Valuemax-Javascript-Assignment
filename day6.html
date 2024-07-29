@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My JavaScript Calculator</title>
+    <title>My JavaScript Calculators</title>
     <link rel="stylesheet" href="day6.css" />
     <link
       rel="stylesheet"
@@ -50,33 +50,75 @@
         </ul>
       </div>
     </nav>
-
+    <!-- Simple Calculator -->
     <div class="container content">
-      <div class="heading">My JavaScript Calculator</div>
-      <div class="calculator">
-        <div class="input-group">
-          <input type="text" id="myinput1" placeholder="Enter number" />
-          <span class="operator" id="symbol"></span>
-          <input type="text" id="myinput2" placeholder="Enter number" />
+      <div class="heading">My JavaScript Calculators</div>
+      <div class="calculators">
+        <div class="calculator simple-calculator">
+          <h3>Simple Calculator</h3>
+          <div class="input-group">
+            <input type="text" id="myinput1" placeholder="Enter number" />
+            <span class="operator" id="symbol">+</span>
+            <input type="text" id="myinput2" placeholder="Enter number" />
+          </div>
+          <div class="result" id="answer"></div>
+          <button class="calc-btn addbtn">+</button>
+          <button class="calc-btn subbtn">-</button>
+          <button class="calc-btn mulbtn">*</button>
+          <button class="calc-btn divbtn">/</button>
         </div>
-        <div class="result" id="answer"></div>
-        <button class="addbtn">+</button>
-        <button class="subbtn">-</button>
-        <button class="mulbtn">*</button>
-        <button class="divbtn">/</button>
-        <div class="result" id="answer"></div>
+
+        <!-- Loan Calculator -->
+        <div class="calculator loan-calculator">
+          <h3>Loan Calculator</h3>
+          <div class="input-group">
+            <input type="text" id="loanAmount" placeholder="Loan Amount" />
+            <select id="loanDuration">
+              <option value="1">1 month</option>
+              <option value="2">2 months</option>
+              <option value="3">3 months</option>
+              <option value="4">4 months</option>
+              <option value="5">5 months</option>
+              <option value="6">6 months</option>
+              <option value="7">7 months</option>
+              <option value="8">8 months</option>
+              <option value="9">9 months</option>
+              <option value="10">10 months</option>
+              <option value="11">11 months</option>
+              <option value="12">12 months</option>
+            </select>
+          </div>
+          <button class="calc-btn calculateLoan">Calculate</button>
+          <div class="result" id="loanResult"></div>
+        </div>
+
+        <!-- Investment Calculator -->
+        <div class="calculator investment-calculator">
+          <h3>Investment Calculator</h3>
+          <div class="input-group">
+            <input
+              type="text"
+              id="investmentAmount"
+              placeholder="Investment Amount"
+            />
+            <select id="investmentDuration">
+              <option value="1">1 Month</option>
+              <option value="2">2 Months</option>
+              <option value="3">3 Months</option>
+            </select>
+          </div>
+          <button class="calc-btn calculateInvestment">Calculate</button>
+          <div class="result" id="investmentResult"></div>
+        </div>
       </div>
     </div>
 
     <div class="footer">
       &copy; 2024 Juwon Code | Valuemax JavaScript All rights reserved.
     </div>
-
+    <script src="day6.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- My External Javascript Code Link -->
-    <script src="day6.js"></script>
   </body>
 </html>

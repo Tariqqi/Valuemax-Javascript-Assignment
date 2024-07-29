@@ -1,43 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 7 - Assignment not yet available</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="day7.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess My Number</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .navbar {
+        background-color: #ffffff;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.5em;
+      }
+
+      .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .heading {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .instruction {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"] {
+        font-size: 1.5rem;
+        padding: 10px;
+        width: 100%;
+        max-width: 120px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #d1d1d1;
+        background-color: #f7f7f7;
+        margin-bottom: 20px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #333;
+        color: #ffffff;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        width: 100%;
+        max-width: 150px;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 1.5rem;
+      }
+
+      .highest-score {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+          padding: 20px;
+        }
+
+        .heading {
+          font-size: 1.5rem;
+        }
+
+        input[type="text"] {
+          font-size: 1.2rem;
+          width: 80%;
+        }
+
+        button {
+          font-size: 1rem;
+          padding: 10px;
+          width: 45%;
+          margin: 5px;
+        }
+
+        .result {
+          font-size: 1.2rem;
+        }
+
+        .navbar {
+          border-radius: 0;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Juwon Code</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
-                <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
-                <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
-                <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
-                <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day2.html">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day3.html">Day 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day4.html">Day 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day5.html">Day 5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day6.html">Day 6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day7.html">Day 7</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day8.html">Day 8</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="content">
-        <div class="heading">Day 7</div>
-        <div class="subheading">Not yet available. Check back soon!</div>
+    <div class="container">
+      <h1 class="heading">Guess My Number</h1>
+      <p class="instruction">Guess a number between 45 and 60</p>
+      <input type="text" id="myinput" placeholder="Enter your guess" />
+      <button id="checkit">Check</button>
+      <button id="playagain" style="display: none">Play Again</button>
+      <h2 id="guessnow">Start guessing....</h2>
+      <h3 id="shownumber" style="display: none">The number is ??</h3>
+      <div class="highest-score">
+        Highest Score: <span id="highestscore">0</span>
+      </div>
     </div>
 
-    <div class="footer">
-        &copy; 2024 Juwon Code | Valuemax JavaScript. All rights reserved.
-    </div>
+    <script>
+      let guessnow = document.getElementById("guessnow");
+      let shownumber = document.getElementById("shownumber");
+      let btncheck = document.getElementById("checkit");
+      let btnplayagain = document.getElementById("playagain");
+      let highestscore = document.getElementById("highestscore");
 
+      let secretNumber = Math.trunc(Math.random() * 16) + 45;
+      let score = 10;
+      let xscore = 0;
+
+      function scoreline() {
+        score -= 2;
+        if (score == 0) {
+          guessnow.innerHTML = "Game Over 😢";
+          guessnow.style.color = "white";
+          guessnow.style.backgroundColor = "red";
+          guessnow.style.padding = "10px";
+          guessnow.style.borderRadius = "10px";
+          guessnow.style.boxShadow = "0 4px 10px rgba(255, 0, 0, 0.5)";
+          shownumber.innerHTML = `The number was actually ${secretNumber}`;
+          shownumber.style.display = "block";
+          btnplayagain.style.display = "inline-block";
+        }
+      }
+
+      function guesengine() {
+        let myGues = Number(document.getElementById("myinput").value);
+
+        if (isNaN(myGues)) {
+          guessnow.innerHTML = "Invalid input ⚠️";
+          scoreline();
+          document.getElementById("myinput").value = "";
+          document.getElementById("myinput").focus();
+        } else if (myGues > secretNumber) {
+          guessnow.innerHTML = "Your Guess is too high 📈";
+          guessnow.style.color = "red";
+          scoreline();
+          document.getElementById("myinput").value = "";
+          document.getElementById("myinput").focus();
+        } else if (myGues < secretNumber) {
+          guessnow.innerHTML = "Your Guess is too low 📉";
+          guessnow.style.color = "blue";
+          scoreline();
+          document.getElementById("myinput").value = "";
+          document.getElementById("myinput").focus();
+        } else {
+          guessnow.innerHTML = "Correct 🎉";
+          guessnow.style.color = "white";
+          guessnow.style.backgroundColor = "green";
+          guessnow.style.padding = "10px";
+          guessnow.style.borderRadius = "10px";
+          guessnow.style.boxShadow = "0 4px 10px rgba(0, 255, 0, 0.5)";
+          shownumber.innerHTML = `The number is ${secretNumber}`;
+          shownumber.style.display = "block";
+          btncheck.style.display = "none";
+          btnplayagain.style.display = "inline-block";
+          if (score > xscore) {
+            xscore = score;
+            highestscore.innerHTML = xscore;
+          }
+        }
+      }
+
+      btncheck.addEventListener("click", guesengine);
+      btnplayagain.addEventListener("click", function () {
+        guessnow.innerHTML = `Start Guessing....`;
+        guessnow.style.color = "black";
+        guessnow.style.backgroundColor = "transparent";
+        guessnow.style.padding = "0";
+        guessnow.style.borderRadius = "0";
+        guessnow.style.boxShadow = "none";
+        document.getElementById("myinput").value = "";
+        document.getElementById("myinput").focus();
+        btncheck.style.display = "inline-block";
+        btnplayagain.style.display = "none";
+        secretNumber = Math.trunc(Math.random() * 16) + 45;
+        score = 10;
+        shownumber.style.display = "none";
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>

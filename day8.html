@@ -1,43 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 8 - Assignment not yet available</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="day8.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odd Numbers from 20 to 35</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+      }
+      .navbar {
+        background-color: #ffffff;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        max-width: 100%;
+        width: 90%;
+      }
+      .navbar-brand {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.5em;
+      }
+      .navbar-nav {
+        margin: auto;
+      }
+      .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        flex: 1;
+      }
+      .heading {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .numbers {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .numbers span {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+        background-color: #007aff;
+        margin: 5px;
+      }
+      .numbers span:nth-child(odd) {
+        background-color: #ff5733;
+      }
+      .numbers span:nth-child(even) {
+        background-color: #33c3ff;
+      }
+      .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #ffffff;
+        border-top: 1px solid #dddddd;
+        width: 100%;
+      }
+      @media (max-width: 756px) {
+        .heading {
+          font-size: 2rem;
+        }
+        .numbers span {
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+          margin: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">Juwon Code</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Day 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="day2.html">Day 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="day3.html">Day 3</a></li>
-                <li class="nav-item"><a class="nav-link" href="day4.html">Day 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="day5.html">Day 5</a></li>
-                <li class="nav-item"><a class="nav-link" href="day6.html">Day 6</a></li>
-                <li class="nav-item"><a class="nav-link" href="day7.html">Day 7</a></li>
-                <li class="nav-item"><a class="nav-link" href="day8.html">Day 8</a></li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">Juwon Code</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day2.html">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day3.html">Day 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day4.html">Day 4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day5.html">Day 5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day6.html">Day 6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day7.html">Day 7</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="day8.html">Day 8</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="content">
-        <div class="heading">Day 8</div>
-        <div class="subheading">Not yet available. Check back soon!</div>
+    <div class="container">
+      <div class="heading">Odd Numbers from 20 to 35</div>
+      <div class="content">
+        <div class="numbers" id="numberContainer">
+          <script>
+            for (let i = 20; i <= 35; i++) {
+              if (i % 2 !== 0) {
+                document.write(`<span>${i}</span> `);
+              }
+            }
+          </script>
+        </div>
+      </div>
     </div>
 
     <div class="footer">
-        &copy; 2024 Juwon Code | Valuemax JavaScript. All rights reserved.
+      &copy; 2024 Juwon Code | Valuemax JavaScript All rights reserved.
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
