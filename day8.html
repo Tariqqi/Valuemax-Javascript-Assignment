@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Odd Numbers from 20 to 35</title>
+    <title>Odd and Prime Numbers from 20 to 35</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -79,13 +79,12 @@
         font-size: 16px;
         color: white;
         font-weight: bold;
-        background-color: #007aff;
         margin: 5px;
       }
-      .numbers span:nth-child(odd) {
+      .numbers .odd {
         background-color: #ff5733;
       }
-      .numbers span:nth-child(even) {
+      .numbers .prime {
         background-color: #33c3ff;
       }
       .footer {
@@ -150,23 +149,48 @@
     </nav>
 
     <div class="container">
-      <div class="heading">Odd Numbers from 20 to 35</div>
+      <div class="heading">Odd Numbers from 20 to 35 Using Loop</div>
       <div class="content">
-        <div class="numbers" id="numberContainer">
-          <script>
-            for (let i = 20; i <= 35; i++) {
-              if (i % 2 !== 0) {
-                document.write(`<span>${i}</span> `);
-              }
-            }
-          </script>
-        </div>
+        <div class="numbers" id="oddNumberContainer"></div>
+      </div>
+      <br><br>
+      <!-- Prime Number -->
+      <div class="heading">Prime Numbers from 20 to 35</div>
+      <div class="content">
+        <div class="numbers" id="primeNumberContainer"></div>
       </div>
     </div>
 
     <div class="footer">
       &copy; 2024 Juwon Code | Valuemax JavaScript All rights reserved.
     </div>
+    <script>
+      // Odd numbers
+      let oddNumber = document.getElementById('oddNumberContainer');
+      for (let i = 20; i <= 35; i++) {
+        if (i % 2 !== 0) {
+          oddNumber.innerHTML += `<span class="odd">${i}</span>`;
+        }
+      }
+
+      // prime numbers
+      let primeNumber = document.getElementById('primeNumberContainer');
+      let i = 20;
+      while (i <= 35) {
+        if (i > 1) {
+          let j = 2;
+          for (; j < i; j++) {
+            if (i % j === 0) {
+              break;
+            }
+          }
+          if (j === i) {
+            primeNumber.innerHTML += `<span class="prime">${i}</span>`;
+          }
+        }
+        i++;
+      }
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

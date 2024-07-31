@@ -110,6 +110,17 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
+      .current-score {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
       @media (max-width: 768px) {
         .container {
           width: 90%;
@@ -192,6 +203,9 @@
       <button id="playagain" style="display: none">Play Again</button>
       <h2 id="guessnow">Start guessing....</h2>
       <h3 id="shownumber" style="display: none">The number is ??</h3>
+      <div class="current-score">
+        Current Score: <span id="currentscore"></span>
+      </div>
       <div class="highest-score">
         Highest Score: <span id="highestscore">0</span>
       </div>
@@ -203,6 +217,7 @@
       let btncheck = document.getElementById("checkit");
       let btnplayagain = document.getElementById("playagain");
       let highestscore = document.getElementById("highestscore");
+      let currentscore = document.getElementById("currentscore");
 
       let secretNumber = Math.trunc(Math.random() * 16) + 45;
       let score = 10;
@@ -210,6 +225,7 @@
 
       function scoreline() {
         score -= 2;
+        currentscore.innerHTML = score;
         if (score == 0) {
           guessnow.innerHTML = "Game Over 😢";
           guessnow.style.color = "white";
@@ -275,6 +291,7 @@
         btnplayagain.style.display = "none";
         secretNumber = Math.trunc(Math.random() * 16) + 45;
         score = 10;
+        currentscore.innerHTML = score;
         shownumber.style.display = "none";
       });
     </script>
